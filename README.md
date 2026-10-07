@@ -85,7 +85,12 @@
 
 ### 통합 해석 사례
 
-<!-- TODO: 통합 해석 결과 사례 이미지 (MIMIC-CXR 흉부 X선) -->
+<p align="center">
+  <img src="figures/integrated_result.png" alt="MIMIC-CXR 흉부 X선 통합 해석 결과 사례" width="100%">
+</p>
+
+흉부 X선 요청에 대해 3개 모델을 선택·실행하고, 모델별 결과(ROI · Grad-CAM · 확률)를 외부 지식 및 Wiki와 연결해
+판독문으로 변환한 사례입니다. 생성된 판독문의 중심정맥관 검출과 접근 경로는 정답 판독문과 일치했습니다.
 
 ---
 
