@@ -23,13 +23,15 @@
 
 ## 시스템 아키텍처
 
-<!-- TODO: 아키텍처 다이어그램 이미지 -->
+<p align="center">
+  <img src="figures/architecture.png" alt="System architecture" width="100%">
+</p>
 
 | 서버 | 역할 |
 |---|---|
-| **[Routing Server](routing-server/)** | 요청 접수, Agent·Model Execution Server 간 실행 흐름 조율, 데이터·결과 저장 (MongoDB · GridFS) |
-| **[Agent Server](agent-server/)** | 모델 선택·실행 계획 수립, RAG · LLM Wiki 기반 결과 해석 (vLLM · ChromaDB) |
-| **[Model Execution Server](model-execution-server/)** | Inference Gateway와 Docker runtime으로 모델별 추론 실행 |
+| **[Routing Server](routing-server/)** | 요청 관리 · 모델 실행 제어 · 결과 취합. 의료 데이터와 분석 결과, 실행 이력은 MongoDB / GridFS에 저장 |
+| **[Agent Server](agent-server/)** | 요청 해석 · 모델 선택 · RAG 기반 통합 해석. Model Registry, Knowledge Base(ChromaDB), Local LLM/VLM(Gemma 31B), LLM Wiki 활용 |
+| **[Model Execution Server](model-execution-server/)** | Inference Gateway가 모델 설정에 따라 basic · medical · YOLO · nnU-Net Docker runtime으로 연결해 추론 실행 |
 
 ---
 
