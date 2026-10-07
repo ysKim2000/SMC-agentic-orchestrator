@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="200" viewBox="0 0 1000 200" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', system-ui, sans-serif">
+  <rect x="0.5" y="0.5" width="234" height="199" rx="16" fill="#161B22" stroke="#30363D"/>
+  <rect x="24" y="24" width="28" height="4" rx="2" fill="#2DD4BF"/>
+  <text x="24" y="50" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#8B949E">MODELS</text>
+  <text x="22" y="112" font-size="54" font-weight="800" letter-spacing="-1.5" fill="#E6EDF3">94</text>
+  <text x="24" y="144" font-size="16.5" font-weight="700" fill="#E6EDF3">의료 AI 모델</text>
+  <text x="24" y="172" font-size="12.5" fill="#8B949E">분류 · 분할 · 검출 · 정량화</text>
+  <rect x="255.5" y="0.5" width="234" height="199" rx="16" fill="#161B22" stroke="#30363D"/>
+  <rect x="279" y="24" width="28" height="4" rx="2" fill="#2DD4BF"/>
+  <text x="279" y="50" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#8B949E">DEPARTMENTS</text>
+  <text x="277" y="112" font-size="54" font-weight="800" letter-spacing="-1.5" fill="#E6EDF3">8</text>
+  <text x="279" y="144" font-size="16.5" font-weight="700" fill="#E6EDF3">진료과</text>
+  <text x="279" y="172" font-size="12.5" fill="#8B949E">호흡기 · 정형 · 신경 외 5개</text>
+  <rect x="510.5" y="0.5" width="234" height="199" rx="16" fill="#161B22" stroke="#30363D"/>
+  <rect x="534" y="24" width="28" height="4" rx="2" fill="#2DD4BF"/>
+  <text x="534" y="50" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#8B949E">MODALITIES</text>
+  <text x="532" y="112" font-size="54" font-weight="800" letter-spacing="-1.5" fill="#E6EDF3">7</text>
+  <text x="534" y="144" font-size="16.5" font-weight="700" fill="#E6EDF3">데이터 모달리티</text>
+  <text x="534" y="172" font-size="12.5" fill="#8B949E">X-ray · CT · MRI · ECG 외</text>
+  <rect x="765.5" y="0.5" width="234" height="199" rx="16" fill="#0D2624" stroke="#1E6B64"/>
+  <rect x="789" y="24" width="28" height="4" rx="2" fill="#2DD4BF"/>
+  <text x="789" y="50" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#8B949E">BENCHMARK</text>
+  <text x="787" y="112" font-size="54" font-weight="800" letter-spacing="-1.5" fill="#2DD4BF">0.861</text>
+  <text x="789" y="144" font-size="16.5" font-weight="700" fill="#E6EDF3">평균 AUROC</text>
+  <text x="789" y="166" font-size="11" font-weight="600" fill="#8B949E">VLM</text>
+  <rect x="823" y="159" width="113" height="6" rx="3" fill="#262D36"/>
+  <rect x="823" y="159" width="80.0" height="6" rx="3" fill="#56616D"/>
+  <text x="944" y="166" font-size="11.5" font-weight="700" fill="#8B949E">0.708</text>
+  <text x="789" y="185" font-size="11" font-weight="600" fill="#8B949E">Ours</text>
+  <rect x="823" y="178" width="113" height="6" rx="3" fill="#262D36"/>
+  <rect x="823" y="178" width="97.3" height="6" rx="3" fill="#2DD4BF"/>
+  <text x="944" y="185" font-size="11.5" font-weight="700" fill="#2DD4BF">0.861</text>
+</svg>

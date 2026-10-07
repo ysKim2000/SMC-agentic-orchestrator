@@ -9,14 +9,12 @@
   <img src="figures/screen.png" alt="MAPLE Clinical Chat 실행 화면" width="100%">
 </p>
 
-<table align="center">
-  <tr>
-    <td align="center" width="200"><h2>94</h2>의료 AI 모델</td>
-    <td align="center" width="200"><h2>8</h2>진료과</td>
-    <td align="center" width="200"><h2>7</h2>데이터 모달리티</td>
-    <td align="center" width="200"><h2>0.861</h2>평균 AUROC<br><sub>VLM 단독 0.708 대비 +0.153</sub></td>
-  </tr>
-</table>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="figures/highlights-dark.svg">
+    <img src="figures/highlights-light.svg" alt="의료 AI 모델 94종 · 진료과 8개 · 데이터 모달리티 7종 · 평균 AUROC 0.861 (VLM 단독 0.708)" width="100%">
+  </picture>
+</p>
 
 ---
 
