@@ -5,11 +5,18 @@
 자연어 요청과 의료 데이터를 받아 에이전트가 적합한 의료 AI 특화 모델을 **선택·실행**하고,
 모델 결과와 외부 지식을 **하나의 임상 해석**으로 통합합니다.
 
-<!-- TODO: 대표 이미지 (시스템 실행 화면) -->
+<p align="center">
+  <img src="figures/screen.png" alt="MAPLE Clinical Chat 실행 화면" width="100%">
+</p>
 
-| 94종 | 8개 | 7종 | 0.708 → 0.861 |
-|:---:|:---:|:---:|:---:|
-| 등록 의료 AI 모델 | 진료과 | 데이터 모달리티 | 평균 AUROC<br>(VLM 단독 → Ours) |
+<table align="center">
+  <tr>
+    <td align="center" width="200"><h2>94</h2>의료 AI 모델</td>
+    <td align="center" width="200"><h2>8</h2>진료과</td>
+    <td align="center" width="200"><h2>7</h2>데이터 모달리티</td>
+    <td align="center" width="200"><h2>0.861</h2>평균 AUROC<br><sub>VLM 단독 0.708 대비 +0.153</sub></td>
+  </tr>
+</table>
 
 ---
 
