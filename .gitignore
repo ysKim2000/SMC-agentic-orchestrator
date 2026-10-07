@@ -1,0 +1,50 @@
+# Repository-wide rules. Server-specific rules live in each server's .gitignore.
+
+# Local reference materials (slides, portfolio)
+ref/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Medical data — never commit patient images or derived volumes
+*.dcm
+*.nii
+*.nii.gz
+*.mha
+*.nrrd
+
+# Model weights (mounted at runtime)
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# Logs
+*.log
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code (local settings)
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
