@@ -1,0 +1,28 @@
+# 빌드 컨텍스트 축소용.
+# 모델 가중치(AI_Models, models)와 입출력 디렉토리는 이미지에 포함되지 않고
+# docker-compose.runtime.yml 에서 volume 으로 주입됩니다. 컨텍스트에 넣으면
+# 빌드마다 18GB 를 데몬으로 전송하게 되므로 제외합니다.
+
+AI_Models/
+models/
+inputs/
+outputs/
+
+.git/
+.gitignore
+docs/
+tests/
+scripts/
+README.md
+
+docker-compose.yml
+docker-compose.runtime.yml
+
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/.venv/
+**/venv/
+.env
+.env.*
+!.env.example

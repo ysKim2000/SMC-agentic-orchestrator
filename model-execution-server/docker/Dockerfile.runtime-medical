@@ -1,0 +1,36 @@
+FROM maple/runtime-basic:latest
+
+# OpenCV 런타임 의존 (ChestXray14 Grad-CAM 오버레이용). libgl1/libglib2.0은 headless에서도 필요.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgl1 \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir \
+    monai==1.5.2 \
+    opencv-python-headless==4.10.0.84 \
+    timm==1.0.22 \
+    pydicom==3.0.1 \
+    pylibjpeg==2.0.0 \
+    pylibjpeg-libjpeg==2.3.0 \
+    transformers==4.46.3 \
+    SimpleITK==2.4.1 \
+    lungmask==0.2.20 \
+    fill-voids==2.0.8 \
+    more-itertools==10.5.0 \
+    "tiger @ git+https://github.com/DIAGNijmegen/Tiger.git@4c63f6d58ed3f8e7a0cec04b0352949f7b512919" \
+    seaborn==0.13.2 \
+    albumentations==1.4.24
+
+RUN pip install --no-cache-dir --no-deps \
+    torchxrayvision==1.4.0
+
+# ECGLight_MI loads an sktime Arsenal pickle produced with scikit-learn 1.7.2.
+# Keep these versions explicit: newer scikit-learn releases cannot reliably
+# deserialize the checkpoint, and older releases emit compatibility warnings.
+RUN pip install --no-cache-dir \
+    sktime==0.39.0 \
+    scikit-learn==1.7.2
+
+EXPOSE 8000
+CMD ["uvicorn", "app.runtime_server:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,32 @@
+# Model weights and packages are mounted at runtime, not versioned here
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.bin
+*.h5
+*.pkl
+
+# Medical imaging data
+*.nii
+*.nii.gz
+*.dcm
+*.mha
+*.nrrd
+
+# Runtime I/O (keep the dirs)
+inputs/*
+outputs/*
+!inputs/.gitkeep
+!outputs/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Environment
+.env
+.env.*
+!.env.example

@@ -1,0 +1,19 @@
+FROM maple/runtime-basic:latest
+
+# nnU-Net v2 and TotalSegmentator for segmentation models.
+#
+# nnunetv2 must stay pinned. A trained checkpoint embeds the trainer and plans schema, so an
+# unpinned rebuild can pull a newer nnU-Net that refuses to load the deployed models
+# (MSD_Lung_Tumor_nnUNet_Ensemble and the BraTS2020 packages were all trained on 2.8.1).
+# The three transitive packages below are pinned to the versions those checkpoints were
+# produced and validated with.
+RUN pip install --no-cache-dir \
+    nnunetv2==2.8.1 \
+    dynamic-network-architectures==0.4.4 \
+    batchgenerators==0.25.3 \
+    acvl-utils==0.2.6 \
+    TotalSegmentator==2.15.0 \
+    opencv-python-headless==4.10.0.84
+
+EXPOSE 8000
+CMD ["uvicorn", "app.runtime_server:app", "--host", "0.0.0.0", "--port", "8000"]

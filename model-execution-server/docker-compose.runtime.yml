@@ -1,0 +1,144 @@
+version: "3.9"
+
+# Runtime-image-based docker-compose.
+# 모델 가중치와 runner 는 volume 으로 주입되며, 컨테이너 이미지에는 포함되지 않습니다.
+#
+# 사용법:
+#   docker compose -f docker-compose.yml -f docker-compose.runtime.yml up -d
+#
+# 환경변수 (.env):
+#   RUNTIME_BASIC_URL   = http://runtime-basic:8000
+#   RUNTIME_MEDICAL_URL = http://runtime-medical:8000
+#   RUNTIME_YOLO_URL    = http://runtime-yolo:8000
+#   RUNTIME_NNUNET_URL  = http://runtime-nnunet:8000
+
+services:
+  runtime-basic:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.runtime-basic
+    image: maple/runtime-basic:latest
+    container_name: maple-runtime-basic
+    init: true                     # 고아 프로세스 자동 회수(좀비 누적 방지)
+    restart: unless-stopped
+    ports:
+      - "9020:8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./AI_Models:/app/AI_Models:ro
+      - ./inputs:/app/inputs
+      - ./outputs:/app/outputs
+      - ${ROUTING_DATA_DIR:-../routing-server/data}:/data
+    environment:
+      - MODELS_DIR=/app/models
+      - INPUTS_DIR=/app/inputs
+      - OUTPUTS_DIR=/app/outputs
+      # GPU 0·1은 vLLM(TP=2)이 점유 → 러너가 고정 사용하는 cuda:0을 호스트 GPU 3으로 매핑
+      - CUDA_VISIBLE_DEVICES=3
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  runtime-medical:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.runtime-medical
+    image: maple/runtime-medical:latest
+    container_name: maple-runtime-medical
+    init: true                     # 고아 프로세스 자동 회수(좀비 누적 방지)
+    depends_on:
+      - runtime-basic
+    restart: unless-stopped
+    ports:
+      - "9021:8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./AI_Models:/app/AI_Models:ro
+      - ./inputs:/app/inputs
+      - ./outputs:/app/outputs
+      - ${ROUTING_DATA_DIR:-../routing-server/data}:/data
+    environment:
+      - MODELS_DIR=/app/models
+      - INPUTS_DIR=/app/inputs
+      - OUTPUTS_DIR=/app/outputs
+      # GPU 0·1은 vLLM(TP=2)이 점유 → 러너가 고정 사용하는 cuda:0을 호스트 GPU 3으로 매핑
+      - CUDA_VISIBLE_DEVICES=3
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  runtime-yolo:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.runtime-yolo
+    image: maple/runtime-yolo:latest
+    container_name: maple-runtime-yolo
+    init: true                     # 고아 프로세스 자동 회수(좀비 누적 방지)
+    restart: unless-stopped
+    ports:
+      - "9022:8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./AI_Models:/app/AI_Models:ro
+      - ./inputs:/app/inputs
+      - ./outputs:/app/outputs
+      - ${ROUTING_DATA_DIR:-../routing-server/data}:/data
+    environment:
+      - MODELS_DIR=/app/models
+      - INPUTS_DIR=/app/inputs
+      - OUTPUTS_DIR=/app/outputs
+      # GPU 0·1은 vLLM(TP=2)이 점유 → 러너가 고정 사용하는 cuda:0을 호스트 GPU 2로 매핑
+      - CUDA_VISIBLE_DEVICES=2
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  runtime-nnunet:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.runtime-nnunet
+    image: maple/runtime-nnunet:latest
+    container_name: maple-runtime-nnunet
+    init: true                     # 고아 프로세스 자동 회수(좀비 누적 방지)
+    shm_size: "8gb"
+    depends_on:
+      - runtime-basic
+    restart: unless-stopped
+    ports:
+      - "9023:8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./AI_Models:/app/AI_Models:ro
+      - ./inputs:/app/inputs
+      - ./outputs:/app/outputs
+      - ${ROUTING_DATA_DIR:-../routing-server/data}:/data
+      # TotalSegmentator weights (3.4 GB) stay on the host: read-only here, and the writable
+      # config dir is redirected to /tmp so the mount can be shared by every runtime.
+      - ${TOTALSEG_WEIGHTS_DIR:-${HOME}/.totalsegmentator}/nnunet/results:/opt/totalseg/weights:ro
+    environment:
+      - MODELS_DIR=/app/models
+      - INPUTS_DIR=/app/inputs
+      - OUTPUTS_DIR=/app/outputs
+      # GPU 0·1은 vLLM(TP=2)이 점유 → 러너가 고정 사용하는 cuda:0을 호스트 GPU 3으로 매핑
+      - CUDA_VISIBLE_DEVICES=3
+      - TOTALSEG_WEIGHTS_PATH=/opt/totalseg/weights
+      - TOTALSEG_HOME_DIR=/tmp/totalsegmentator
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

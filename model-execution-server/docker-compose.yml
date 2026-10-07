@@ -1,0 +1,28 @@
+# maple Model Execution Server — Docker Compose
+#
+# 레거시 개별 모델 컨테이너는 제거됨.
+# 모델 추론은 docker-compose.runtime.yml 의 runtime 컨테이너로 처리됩니다.
+#
+# 실행: docker compose -f docker-compose.yml -f docker-compose.runtime.yml up -d
+
+services:
+
+  # ── Inference Gateway (요청 라우팅 + 응답 정규화) ──────────
+  inference-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maple-inference
+    image: maple/inference-server:latest
+    ports:
+      - "8110:8110"
+    environment:
+      - RUNTIME_BASIC_URL=http://runtime-basic:8000
+      - RUNTIME_MEDICAL_URL=http://runtime-medical:8000
+      - RUNTIME_YOLO_URL=http://runtime-yolo:8000
+      - RUNTIME_NNUNET_URL=http://runtime-nnunet:8000
+      - MODELS_DIR=/app/models
+    volumes:
+      - ./models:/app/models:ro
+      - ./AI_Models:/app/AI_Models:ro
+    restart: unless-stopped

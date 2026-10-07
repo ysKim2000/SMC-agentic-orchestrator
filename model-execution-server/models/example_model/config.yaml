@@ -1,0 +1,36 @@
+# Example model config — copy this to models/<your_model_name>/config.yaml
+
+# 모델 고유 이름 (models/ 디렉터리 이름과 일치해야 함)
+model_name: example_model
+
+# 실행 방식: external_runtime (runtime 컨테이너) | legacy_image (기존 개별 컨테이너)
+execution_mode: external_runtime
+
+# 이 모델이 실행될 runtime 컨테이너 이름
+# runtime_loader.py 의 _RUNTIME_ENV 키와 일치해야 함
+# 선택지: runtime-basic | runtime-medical | runtime-yolo | runtime-nnunet
+runtime: runtime-basic
+
+# runner.py 경로 (컨테이너 내부 경로)
+# runner.py 는 predict(input_path, output_dir, config) -> dict 를 구현해야 함
+runner_path: /app/models/example_model/runner.py
+
+# 실제 모델에서는 AI_Models 아래의 inference.py를 지정합니다.
+inference_path: /app/models/example_model/runner.py
+
+# 모델 가중치 경로 (컨테이너 내부 경로)
+# docker-compose volume 으로 주입됨
+model_path: /app/models/example_model/checkpoint/model.pt
+
+# 추론 파라미터 (runner.py 에서 config dict 로 접근 가능)
+params:
+  threshold: 0.5
+  device: cuda
+  batch_size: 1
+
+# 메타데이터 (선택, 문서화 목적)
+meta:
+  description: "Example model for demonstration"
+  modality: "CT"
+  task: "classification"
+  version: "1.0.0"

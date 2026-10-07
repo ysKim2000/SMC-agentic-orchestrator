@@ -1,0 +1,20 @@
+FROM nvcr.io/nvidia/pytorch:25.12-py3
+
+WORKDIR /app
+
+# Common medical imaging libraries
+RUN pip install --no-cache-dir \
+    fastapi==0.121.3 \
+    uvicorn==0.34.1 \
+    pydantic==2.11.3 \
+    pyyaml==6.0.2 \
+    nibabel==5.4.2 \
+    scipy \
+    scikit-image \
+    Pillow \
+    numpy
+
+COPY app/ ./app/
+
+EXPOSE 8000
+CMD ["uvicorn", "app.runtime_server:app", "--host", "0.0.0.0", "--port", "8000"]
