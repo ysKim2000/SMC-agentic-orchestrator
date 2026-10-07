@@ -1,0 +1,41 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+
+# Medical Data (patient images, inference results)
+data/input/*
+data/output/*
+
+# Database Dumps (may contain sensitive data)
+db_dump.json
+*.dump
+*.bak
+
+# Logs
+*.log
+logs/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code (local settings)
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini

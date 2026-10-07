@@ -1,0 +1,48 @@
+# ── Secrets & environment ──────────────────────────
+# .env 는 이미지에 절대 포함하지 않는다 (런타임에 -e / env_file 로 주입)
+.env
+.env.*
+!.env.example
+
+# ── Python virtualenv / caches ─────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+.mypy_cache/
+.pytest_cache/
+
+# ── Version control & IDE ──────────────────────────
+.git/
+.gitignore
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Logs & local data ──────────────────────────────
+logs/
+*.log
+data/input/*
+data/output/*
+
+# ── Database dumps (민감 데이터 가능) ───────────────
+db_dump.json
+*.dump
+*.bak
+
+# ── Docker & docs (이미지에 불필요) ─────────────────
+Dockerfile
+.dockerignore
+README.md
+docs/
+
+# ── Claude Code / tooling ──────────────────────────
+.claude/
+
+# ── OS cruft ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini

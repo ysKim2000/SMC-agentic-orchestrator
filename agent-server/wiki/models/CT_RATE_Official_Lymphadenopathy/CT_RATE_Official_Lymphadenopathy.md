@@ -1,0 +1,95 @@
+# CT_RATE_Official_Lymphadenopathy
+
+## 기본 정보
+- **진료과:** Pulmonology
+- **프로젝트:** CT_RATE_Official_Lymphadenopathy
+- **task_type:** classification
+- **required_data:** [nii, nii.gz]
+- **result_type:** [gradcam_axial_montage, classification_probabilities]
+- **provides:** []
+- **requires:** []
+
+## 설명
+Binary classifier for lymphadenopathy on a chest CT volume, trained on CT-RATE. Input: chest CT (volumetric (NIfTI)); file formats nii, nii.gz. Assesses: lymphadenopathy, enlarged lymph node, mediastinal adenopathy. Outputs: probability, binary decision, Grad-CAM axial montage.
+
+## 임상 해석 패턴
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061834035565.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061753131654.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061557224997.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061514405633.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061358773041.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061226251527.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061149612189.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061137703309.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_061029133921.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060954406224.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060735870395.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060708387415.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060458129065.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060441052648.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060412653198.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060411419131.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060259475188.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060126701659.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060125443706.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_060059939006.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055924747501.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055845339771.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055804035224.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055632788956.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055553158253.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055502242778.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055434357756.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055358572577.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055326754992.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055155151325.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055138088419.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_055053960949.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054859711007.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054858501773.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054857499329.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054646921425.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054634894392.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054515308261.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054514269945.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054332523767.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054237912540.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054108588894.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_054008770192.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053916716585.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053727110395.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053721993058.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053656879801.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053655925716.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053527732357.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053426925955.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053425783472.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053424749494.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053252512709.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053156515693.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_053004753423.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052938369339.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052851911907.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052759743144.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052649680881.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052515654248.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052421252948.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052405086821.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052219195153.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052146595081.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052138297190.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_052137235793.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051957235638.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051922368796.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051919955817.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051819423447.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051705456181.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051621012865.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051620234364.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051430756654.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051429580355.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051420143510.md)
+- 2026-10-06 해석 완료 (CT_RATE_Official_Lymphadenopathy/CT_RATE_Official_Lymphadenopathy/20261006_051401489315.md)
+
+## 관련 개념
+lymphadenopathy, enlarged lymph node, mediastinal adenopathy
